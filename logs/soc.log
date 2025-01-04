@@ -24,3 +24,6 @@
 [INFO|load_soc_definitions.py|main|L60] @ 2025-01-04 07:47:26,813: Cleaning definitions was successful validating schema.
 [INFO|load_soc_definitions.py|main|L72] @ 2025-01-04 07:47:26,839: Connected to metadata schema.
 [INFO|capture.py|record_metadata|L17] @ 2025-01-04 07:47:26,839: Reached record_metadata function.
+[INFO|load_soc_definitions.py|main|L60] @ 2025-01-04 07:48:30,474: Cleaning definitions was successful validating schema.
+[INFO|load_soc_definitions.py|main|L72] @ 2025-01-04 07:48:30,498: Connected to metadata schema.
+[INFO|capture.py|record_metadata|L17] @ 2025-01-04 07:48:30,498: Reached record_metadata function.
