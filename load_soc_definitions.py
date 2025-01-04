@@ -2,7 +2,7 @@ import click
 import pandas as pd
 import pandera as pa
 from pandera.typing import Series
-from pandera.errors import SchemaError, SchemaErrors
+from pandera.errors import SchemaError
 import tomli
 
 from soc import setup_logging, db_engine, metadata_engine
