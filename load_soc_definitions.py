@@ -52,7 +52,7 @@ def main(edition_date):
                 'SOC Code': 'code',
                 'SOC Group': 'group',
                 'SOC Title': 'title',
-                'SOC Definition': 'description',
+                'SOC Definition': 'definition',
             }
         )
     )
@@ -67,6 +67,7 @@ def main(edition_date):
         )
     except SchemaError as e:
         logger.error(f"Validating {TABLE_NAME} failed.", e)
+        return
 
     with metadata_engine.connect() as db:
         logger.info("Connected to metadata schema.")
