@@ -1,0 +1,84 @@
+name = "soc"
+description = "The loader package for the US Standard Occupational Classification codes"
+
+# SOC CODES TABLE --------------------------------------------------------------
+[tables.definitions]
+name="definitions"
+description = "The table that holds all SOC codes, definitions and parent categories"
+unit_of_analysis = "Occupation"
+universe = "867 detailed occupations"
+owner = "Bureau of Labor Statistics"
+collector = "Bureau of Labor Statistics"
+collection_reason = """To classify workers into occupational categories for the 
+purpose of collecting, calculating, or disseminating data."""
+source_url = "https://www.bls.gov/soc/"
+notes = """Alters some of the detail codes to match Lightcast -- see details 
+here https://kb.lightcast.io/en/articles/6957467-lightcast-soc#h_d84f1da663"""
+
+[[tables.definitions.variables]]
+name = "code"
+description = "The SOC code for each occupation"
+parent_variable = "code"
+standard = "SOC"
+
+[[tables.definitions.variables]]
+name = "group"
+description = """The 'depth' of each code with 'Major' as the highest groupings, 
+and 'Detailed' as the specific occupation described by the definition."""
+
+[[tables.definitions.variables]]
+name = "title"
+description = """The name of the occupation associated with the code. For 
+occupations not listed, try the Direct Match Titles table."""
+
+[[tables.definitions.variables]]
+name = "definition"
+description = "The definition of the occupation within SOC"
+
+[tables.definitions.editions.2025-01-01]
+edition_date = "2025-01-01"
+notes = "First upload of this dataset"
+raw_path = "/home/michael/projects/new/system/data/soc/raw/soc_2018_definitions.csv"
+start = "2024-01-01" 
+end = "9999-12-31"
+published = "2025-01-01"
+acquired = "2025-01-01" 
+
+
+# DIRECT MATCH TITLES TABLE ----------------------------------------------------
+[tables.direct_match_titles]
+name="direct_match_titles"
+description = "Direct Match Title File (DMTF) that contains job titles that match detailed occupations in the SOC"
+unit_of_analysis = "Job titles"
+universe = "Job titles connected to detailed SOC codes"
+owner = "Bureau of Labor Statistics"
+collector = "Bureau of Labor Statistics"
+collection_reason = "To connect most common job titles to appropriate SOC codes"
+source_url = "https://www.bls.gov/soc/"
+notes = """Several job titles can match to a single SOC code (many to one"""
+
+[[tables.direct_match_titles.variables]]
+name = "id"
+description = "An surrogate ID number for each description."
+
+[[tables.direct_match_titles.variables]]
+name = "code"
+description = "The code that best aligns with the industry described"
+standard = "NAICS"
+
+[[tables.direct_match_titles.variables]]
+name = "industry_description"
+description = "The detailed description of an industry associtaed with the naics code."
+
+[tables.direct_match_titles.editions.2025-01-01]
+edition_date = "2025-01-01"
+notes = "First upload of this dataset"
+raw_path = "/home/michael/projects/new/system/data/soc/raw/soc_2018_direct_match_title_file.csv"
+
+start = "2024-01-01" 
+end = "9999-12-31"
+
+published = "2025-01-01"
+acquired = "2025-01-01" 
+
+
