@@ -46,6 +46,8 @@ acquired = "2025-01-01"
 
 
 # DIRECT MATCH TITLES TABLE ----------------------------------------------------
+# This loader file with this table hasn't been built yet.
+
 [tables.direct_match_titles]
 name="direct_match_titles"
 description = "Direct Match Title File (DMTF) that contains job titles that match detailed occupations in the SOC"
